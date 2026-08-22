@@ -3,9 +3,7 @@
 End-to-end analysis of a 904,501-row synthetic cybersecurity breach dataset (2010–2024, 30 fields), analyzed across **Excel, SQL, Python, Power BI, Tableau, and Google Sheets** to demonstrate depth of analytical thinking — not just chart-building — across the full BI toolchain.
 
 **Live dashboards:**
-- Excel dashboard: <img width="955" height="381" alt="image" src="https://github.com/user-attachments/assets/a3224cb5-9299-4fff-80cc-7f03e379d029" />
-
-
+- Excel dashboard: 
 ---
 
 ## Why this project exists
