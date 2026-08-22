@@ -3,7 +3,6 @@
 End-to-end analysis of a 904,501-row synthetic cybersecurity breach dataset (2010–2024, 30 fields), analyzed across **Excel, SQL, Python, Power BI, Tableau, and Google Sheets** to demonstrate depth of analytical thinking — not just chart-building — across the full BI toolchain.
 
 **Live dashboards:**
-- Tableau Public: [public.tableau.com/app/profile/krishna.sai.senapathi](https://public.tableau.com/app/profile/krishna.sai.senapathi)
 - Excel dashboard: see `/excel/Cybersecurity_Breaches_904501_Dashboard.xlsx`
 
 ---
@@ -38,7 +37,7 @@ That validation discipline — not the chart count — is the actual point of th
 - Outlier review via IQR method (Q1/Q3, 1.5×IQR bounds)
 - Full validation report documenting every check, method, and assumption
 
-**Dashboard** (9 charts, slicer-driven KPIs)
+**Dashboard** (8 charts, slicer-driven KPIs)
 - KPI band: Total Breaches, Records Exposed, Financial Loss, Regulatory Fines, Avg Detection/Containment/Resolution/Notification Days — filterable by Severity Level
 - Breach trend by Year and Month
 - Response Time by Breach Severity (Low → Critical, 4-metric clustered comparison)
@@ -90,4 +89,4 @@ Same dataset, same validated findings, rebuilt in each tool to demonstrate cross
 ## Author
 
 **Krishna Sai** — Data Analyst
-[LinkedIn](https://linkedin.com/in/senapathi-krishna-sai) · [Tableau Public](https://public.tableau.com/app/profile/krishna.sai.senapathi)
+[LinkedIn](https://linkedin.com/in/senapathi-krishna-sai)
