@@ -49,7 +49,7 @@ That validation discipline — not the chart count — is the actual point of th
 
 **Key findings**
 - Critical-severity breaches take **5x longer to detect** than Low-severity ones (214 vs. 41 days), with the gap compounding through containment (299 vs. 57) and resolution (395 vs. 75)
-- Breaches without MFA cost **97% more** on average ($312.57B vs. $158.83B total); without encryption, **84% more**
+- Breaches without MFA cost **81% more** on average ($667K vs. $368K total); without encryption, **124% more**
 - Healthcare leads in both breach volume (170,767) and total financial loss ($126B) — the most expensive sector to be breached in
 - Breach frequency and financial cost don't move in lockstep: Retail has more breaches than Technology, but less total loss
 
