@@ -59,17 +59,17 @@ Every figure above was cross-checked against the raw source data before being fi
 
 ## Phase 2: SQL ✅ Complete
 
-**Setup Notes**
+**Setup Notes** (see [`sql/01_cleaning.sql`](sql/01_cleaning.sql))
 The raw CSV was too large for MySQL Workbench's GUI importer, which failed repeatedly with **Error 2013**. It was instead loaded via the command-line `mysql` client using `LOAD DATA LOCAL INFILE`, which handled the full 904,501-row file directly — a reminder that GUI and CLI tools can hit different practical limits against the exact same database.
 
-**Data Cleaning & Validation**
+**Data Cleaning & Validation** (see [`sql/01_cleaning.sql`](sql/01_cleaning.sql))
 Rebuilt the Excel-phase cleaning logic natively in SQL, plus full type conversion from raw text to proper numeric/date types:
 - Deduplicated 904,501 → 900,000 rows using an indexed, in-place DELETE rather than a full-table copy, which proved far more efficient at this scale
 - ABS()-corrected negative RecordsExposed; stripped $/commas from FinancialLossUSD and RegulatoryFinesUSD, converted to DECIMAL
 - Replaced null/blank SecurityTeamSize with 1; standardized Country, EncryptionUsed, MFAEnabled casing
 - Caught a subtler issue in ComplianceFramework: every value carried an invisible trailing carriage-return character (hex 0D) from the original CSV's Windows-style line endings — invisible on screen, confirmed via HEX() inspection, and cleaned with TRIM(TRAILING '\r' FROM ...)
 
-**Data Manipulation & Analysis**
+**Data Manipulation & Analysis** (see [`sql/02_analysis.sql`](sql/02_analysis.sql))
 13 analytical questions answered using GROUP BY aggregations, CASE-based categorization, window functions (RANK, LAG, running totals via SUM() OVER), and subquery joins, including:
 - Detection time by severity level
 - Cost impact of MFA and encryption (per-incident basis)
@@ -96,7 +96,11 @@ Same dataset, same validated findings, extended in each tool — Python for stat
 
 ```
 /excel/           Excel workbook, dashboard, data validation report
-/sql/             Cleaning scripts, analytical queries
+/sql/
+  01_cleaning.sql   Raw data import (LOAD DATA LOCAL INFILE), dedupe,
+                    type conversion, and full column-by-column cleaning
+  02_analysis.sql   13 analytical queries: cost impact comparisons,
+                    industry/country breakdowns, trends, rankings
 /python/          Planned: statistical analysis (correlation, distribution work)
 /data/            Source dataset (904,501 rows, CSV)
 /screenshots/     Dashboard exports and validation summaries
@@ -107,11 +111,8 @@ Same dataset, same validated findings, extended in each tool — Python for stat
 ## Tools & Techniques
 
 **Excel:** Power Query, PivotTables & PivotCharts, SUMIF/AVERAGEIF, slicers, IQR outlier detection, data type validation (ISNUMBER/ISTEXT)
-
 **SQL:** MySQL — CTEs, window functions (RANK, LAG, running totals), subquery joins, indexing for performance, CLI-based bulk loading
-
 **Python:** planned — correlation analysis, distribution-aware percentile analysis
-
 **Power BI:** in progress
 
 ---
