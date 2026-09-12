@@ -59,7 +59,7 @@ Every figure above was cross-checked against the raw source data before being fi
 
 ## Phase 2: SQL ✅ Complete
 
-**Setup Notes** (see [`sql/01_cleaning.sql`](sql/01_cleaning.sql))
+**Setup Notes** (see [`sql/01_cleaning.sql`](Cybersecurity-Breach-Analytics/01_cleaning.sql))
 The raw CSV was too large for MySQL Workbench's GUI importer, which failed repeatedly with **Error 2013**. It was instead loaded via the command-line `mysql` client using `LOAD DATA LOCAL INFILE`, which handled the full 904,501-row file directly — a reminder that GUI and CLI tools can hit different practical limits against the exact same database.
 
 **Data Cleaning & Validation** (see [`sql/01_cleaning.sql`](sql/01_cleaning.sql))
