@@ -111,8 +111,11 @@ Same dataset, same validated findings, extended in each tool — Python for stat
 ## Tools & Techniques
 
 **Excel:** Power Query, PivotTables & PivotCharts, SUMIF/AVERAGEIF, slicers, IQR outlier detection, data type validation (ISNUMBER/ISTEXT)
+
 **SQL:** MySQL — CTEs, window functions (RANK, LAG, running totals), subquery joins, indexing for performance, CLI-based bulk loading
+
 **Python:** planned — correlation analysis, distribution-aware percentile analysis
+
 **Power BI:** in progress
 
 ---
